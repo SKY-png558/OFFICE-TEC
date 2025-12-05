@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feira de Tecnologia Sustentável — Empreendedorismo com Teclados</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Feira de empreendedorismo com foco em tecnologia sustentável, transformando teclados que iriam para o lixo em inovação." />
+  <style>
+    :root{
+      --green:#2e7d32;
+      --green-700:#1b5e20;
+      --blue:#1e88e5;
+      --ink:#222;
+      --muted:#5a5a5a;
+      --bg:#f7f9fb;
+      --card:#ffffff;
+      --accent:#a5d6a7;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+    a{color:var(--blue);text-decoration:none}
+    a:focus,button:focus,input:focus,textarea:focus{outline:2px solid var(--blue);outline-offset:2px}
+    header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #e6e9ed}
+    .nav{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:36px;height:36px;border-radius:8px;
+      background:conic-gradient(from 180deg, var(--green), var(--accent), #c8e6c9, var(--green));
+      display:grid;place-items:center;color:#fff;font-weight:700
+    }
+    .brand h1{font-size:18px;margin:0}
+    .menu{display:flex;gap:16px;flex-wrap:wrap}
+    .menu a{padding:8px 10px;border-radius:8px}
+    .menu a:hover{background:#f0f4f8}
+    .cta{
+      background:var(--green);color:#fff;padding:10px 14px;border-radius:10px;font-weight:600
+    }
+    .cta:hover{background:var(--green-700)}
+    /* Hero */
+    .hero{max-width:1080px;margin:0 auto;padding:40px 20px;display:grid;grid-template-columns:1.2fr 1fr;gap:28px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}}
+    .hero h2{font-size:36px;margin:0 0 10px}
+    .hero p{color:var(--muted);font-size:18px;margin:0 0 22px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid #d9dee4;background:#fff;color:var(--ink);font-weight:600}
+    .btn.primary{background:var(--green);border-color:var(--green);color:#fff}
+    .hero-card{
+      background:var(--card);border:1px solid #e6e9ed;border-radius:16px;padding:22px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.06)
+    }
+    .hero-card h3{margin-top:0;margin-bottom:8px}
+    .stat{display:flex;gap:12px;align-items:center;margin:10px 0}
+    .stat .dot{width:10px;height:10px;border-radius:50%;background:var(--green)}
+    /* Sections */
+    section{max-width:1080px;margin:0 auto;padding:30px 20px}
+    section h3{font-size:28px;margin:0 0 14px}
+    .grid{display:grid;gap:20px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width:900px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid #e6e9ed;border-radius:14px;padding:18px}
+    .muted{color:var(--muted)}
+    .badge{display:inline-block;background:#e8f5e9;color:var(--green);border:1px solid #c8e6c9;padding:4px 8px;border-radius:999px;font-size:12px;font-weight:700}
+    /* Products gallery */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+    .product{background:var(--card);border:1px solid #e6e9ed;border-radius:12px;overflow:hidden}
+    .product .img{height:150px;background:repeating-linear-gradient(45deg,#d1dbe3,#d1dbe3 10px,#e7edf3 10px,#e7edf3 20px)}
+    .product .body{padding:14px}
+    .product h4{margin:0 0 6px;font-size:18px}
+    /* Program */
+    .agenda{border-left:4px solid var(--green);padding-left:14px}
+    .agenda-item{margin:10px 0}
+    .agenda-item time{display:inline-block;min-width:68px;color:var(--muted);font-weight:700}
+    /* Contact */
+    form{display:grid;gap:12px;max-width:720px}
+    input,textarea,select{padding:12px;border:1px solid #d9dee4;border-radius:10px;background:#fff;font-size:16px}
+    textarea{min-height:120px;resize:vertical}
+    button[type="submit"]{padding:12px 16px;border:none;border-radius:10px;background:var(--blue);color:#fff;font-weight:700}
+    button[type="submit"]:hover{background:#1669b5}
+    /* Footer */
+    footer{background:#0f172a;color:#e6edf6;margin-top:30px}
+    .footer-inner{max-width:1080px;margin:0 auto;padding:24px 20px;display:grid;gap:14px}
+    .footer-note{font-size:14px;color:#b7c2d1}
+  </style>
+</head>
+<body>
+  <header aria-label="Cabeçalho">
+    <nav class="nav" aria-label="Navegação principal">
+     <div class="brand">
+           <img src="LOGO.jpg" alt="Logo Office Tec" class="logo" />
+           <h1>Feira de Tecnologia Sustentável</h1>
+     </div>
+      <div class="menu">
+        <a href="#home">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#feira">Feira</a>
+        <a href="#contato" class="cta">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero" aria-label="Destaque">
+      <div>
+        <span class="badge">Tecnologia sustentável</span>
+        <h2>Transformando teclados descartados em inovação</h2>
+        <p>Nosso projeto de empreendedorismo mostra que é possível unir criatividade e responsabilidade ambiental. Teclados que iriam para o lixo viram produtos úteis, arte e experiências educativas.</p>
+        <div class="hero-actions">
+          <a href="#feira" class="btn primary">Ver programação</a>
+          <a href="#produtos" class="btn">Explorar protótipos</a>
+          <a href="#sobre" class="btn">Entender o propósito</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Impacto do projeto">
+        <h3>Impacto ambiental</h3>
+        <p class="muted">Reduzimos lixo eletrônico e inspiramos soluções circulares.</p>
+        <div class="stat"><span class="dot" aria-hidden="true"></span><strong>Teclados reaproveitados:</strong> 8</div>
+        <div class="stat"><span class="dot" aria-hidden="true"></span><strong>Participantes engajados:</strong> 7 </div>
+      </aside>
+    </section>
+
+    <section id="sobre" aria-labelledby="sobre-title">
+      <h3 id="sobre-title">Sobre o projeto</h3>
+      <div class="grid cols-2">
+        <div class="card">
+          <h4>Por que teclados?</h4>
+          <p>Os teclados são abundantes no lixo eletrônico e têm componentes plásticos e eletrônicos aproveitáveis. Ao reaproveitá-los, mostramos como a tecnologia pode ser mais sustentável e acessível.</p>
+        </div>
+        <div class="card">
+          <h4>Objetivo</h4>
+          <p>Inspirar pessoas e negócios a repensar descarte e consumo, demonstrando processos simples de transformação e o valor do design circular aplicado ao dia a dia.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="produtos" aria-labelledby="produtos-title">
+  <h3 id="produtos-title">Produtos e protótipos</h3>
+  <div class="gallery">
+    <div class="product">
+      <img src="PORTA_RETRATO.jpg" alt="Porta-retrato feito com teclas">
+      <div class="body">
+        <h4>Porta-retrato</h4>
+        <p>Protótipo que utiliza teclas como decoração para guardar lembranças.</p>
+      </div>
+    </div>
+    <div class="product">
+      <img src="QUADRO.jpg" alt="Quadro decorativo com teclas">
+      <div class="body">
+        <h4>Quadro decorativo</h4>
+        <p>Arte tipográfica feita com teclas reaproveitadas.</p>
+      </div>
+    </div>
+    <div class="product">
+      <img src="PORTA_LAPIS.jpg" alt="Porta-lápis feito com teclas">
+      <div class="body">
+        <h4>Porta-lápis</h4>
+        <p>Suporte criativo para canetas feito com teclas recicladas.</p>
+      </div>
+    </div>
+    <div class="product">
+      <img src="CAPA_PERSONALIZADA.jpg" alt="Capa personalizada de caderno com teclas">
+      <div class="body">
+        <h4>Capa personalizada</h4>
+        <p>Caderno com capa feita de teclas reaproveitadas, unindo tecnologia e design.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section id="feira" aria-labelledby="feira-title">
+      <h3 id="feira-title">Feira</h3>
+      <div class="grid cols-2">
+        <div class="card">
+          <h4>Informações principais</h4>
+          <p><strong>Local:</strong>EEEP Professor Onélio Porto, Bairro Prefeito José Walter, Fortaleza-CE<br />
+             <strong>Data:</strong>05/12/2025<br />
+          <p class="muted">Programação sujeita a ajustes. Fique de olho nas atualizações.</p>
+        </div>
+        <div class="card">
+          <h4>Programação</h4>
+          <div class="agenda">
+            <div class="agenda-item">
+              <time datetime="08:00">08:00</time> Abertura e boas-vindas
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" aria-labelledby="contato-title">
+      <h3 id="contato-title">Contato</h3>
+      <p class="muted">Fale com a gente para dúvidas, parcerias ou inscrições nas oficinas.</p>
+      <form aria-label="Formulário de contato">
+        <label>
+          Nome
+          <input type="text" name="nome" placeholder="Seu nome" required />
+        </label>
+        <label>
+          E-mail
+          <input type="email" name="email" placeholder="seuemail@exemplo.com" required />
+        </label>
+        <label>
+          Assunto
+          <select name="assunto" required>
+            <option value="">Selecione...</option>
+            <option value="duvidas">Dúvidas</option>
+            <option value="parceria">Parceria</option>
+            <option value="inscricao">Inscrição em oficina</option>
+          </select>
+        </label>
+        <label>
+          Mensagem
+          <textarea name="mensagem" placeholder="Como podemos ajudar?" required></textarea>
+        </label>
+        <button type="submit">Enviar mensagem</button>
+        <p class="muted">Ao enviar, você concorda com o contato por e-mail para retorno.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div>
+        <strong>Feira de Tecnologia Sustentável</strong><br />
+        Fortaleza, Ceará — Brasil
+      </div>
+      <div class="footer-note">
+        © 2025. Projeto de empreendedorismo com foco em sustentabilidade e reaproveitamento de teclados.
+      </div>
+    </div>
+  </footer>
+    <script src="script.js"></script>
+</body>
+</html>
